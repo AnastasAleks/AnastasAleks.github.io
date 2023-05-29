@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MY UNIVERSITY</title>
+    <link rel="stylesheet" type="text/css" href="../static/portfolio.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <div class="d-flex w-75 justify-content-around">
+        <h1>{{ translations.get('my_portfolio') }}</h1>
+{#    TODO: style the buttons and implement language change #}
+        <div class="d-flex justify-items-center">
+{#    TODO: what is this weird form? Where does it lead? what happens when I click this button? Maybe console logs can help me... #}
+            <form action="/dummy_function" method="post">
+                <input type="hidden" name="lang" value="ru" />
+                <button class="m-1">RU</button>
+            </form>
+            <form action="/dummy_function" method="post">
+                <input type="hidden" name="lang" value="en" />
+                <button class="m-1">EN</button>
+            </form>
+            <form action="/dummy_function" method="post">
+                <input type="hidden" name="lang" value="ch" />
+                <button class="m-1">CH</button>
+            </form>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="grid-container">
+        <div class="name categories">
+            <h1>{{ translations.get('name') }}</h1>
+        </div>
+        <div class="information categories">
+            <a href="/information">{{ translations.get('information') }}</a>
+        </div>
+        <div class="education categories">
+            <a href="/education">{{ translations.get('education') }}</a>
+        </div>
+        <div class="working-experience categories">
+            <a href="/working_experience">{{ translations.get('working_experience') }}</a>
+        </div>
+        <div class="volunteering categories">
+            <a href="/volunteering_activity">{{ translations.get('volunteering_activity') }}</a>
+        </div>
+        <div class="picture">
+            <img src="../static/photo.jpg" alt="Profile Picture">
+        </div>
+        <div class="hobbies categories">
+            <a href="/hobbies">{{ translations.get('hobbies') }}</a>
+        </div>
+        <form action="/send-test-email" method="POST">
+
+        </fieldset>
+           <legend>Contact form</legend>
+            <label> First name: <input type="text" name='firstname' placeholder="Enter your last name"></input></label>
+            <label> Last name: <input type="text" name='lastname' placeholder="Enter your last name"></input></label>
+            <label> E-mail: <input type="text" name='email' placeholder="Enter your e-mail"></input></label>
+            <label>Message: </label>
+            <label><textarea type="text" name='message' placeholder="Your message"></textarea><label>
+            <input type="submit" value="Send">
+        </fieldset>
+        </form>
+<div>
+</main>
+</body>
+</html>
