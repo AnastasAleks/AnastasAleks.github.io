@@ -39,7 +39,7 @@ def main_page():
     # What kind of object is that? What is inside?
     # Maybe you can print it and have a look?
     # TODO: Main task: 1) make everything translatable 2) add another language (any)
-    return render_template('portfolio.html', translations=languages.get(app_language))
+    return render_template('index.html', translations=languages.get(app_language))
 
 @app.route('/dummy_function', methods = ['POST'])
 def dummy_function():
@@ -52,13 +52,13 @@ def dummy_function():
     print("button clicked")
     if lang == 'en':
         app_language = 'en_EN'
-        return render_template('portfolio.html', translations=languages.get(app_language))
+        return render_template('index.html', translations=languages.get(app_language))
     elif lang == 'ru':
         app_language = 'ru_RU'
-        return render_template('portfolio.html', translations=languages.get(app_language))
+        return render_template('index.html', translations=languages.get(app_language))
     else:
         app_language = 'ch_CH'
-        return render_template('portfolio.html', translations=languages.get(app_language))
+        return render_template('index.html', translations=languages.get(app_language))
 @app.route('/volunteering_activity')
 def volunteering_activity():
     return render_template('volunteering_activity.html', translations=languages.get(app_language))
